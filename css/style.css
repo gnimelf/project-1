@@ -1,0 +1,35 @@
+header {
+    background: #DAB88B;
+    text-align: center;
+    
+    
+    
+
+}
+main {
+    display: flex;
+    height: 100%;
+    
+
+}
+
+
+
+
+.placeholder {
+    
+    
+    
+}
+
+.wrapper .sidebar {
+    background-color: crimson;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 500px;
+    padding: 20px;
+    transition: all 0.5 ease;
+}
+
