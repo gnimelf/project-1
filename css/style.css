@@ -1,24 +1,40 @@
 
 
 header {
-    background: #DAB88B;
+    background:#2D656D;
     text-align: center;
-    border-radius: 25px;
     padding: 10px;
     height: 50px;
 
 }
+
+body{
+    background:#e6d8d0; 
+    position: relative;
+}
+
 main {
     display: flex;
     z-index: auto;
+    background-color: #e2bca6;
     height: 100%;
     margin: 20px;
 
 }
+footer{
+    text-align: center;
+    background-color: #2D656D;
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
 
+    
+}
 .container {
     display: flex;
-    background-color:#C49D87;
+    
+    border: 2px solid #2D656D ;
     width: 100%;
     height: 100px;
     padding: 20px;
@@ -31,18 +47,18 @@ main {
     
 }
 
-#wrapper #sidebar {
-    background-color: #2D656D;
+#wrapper  {
+    background-color: #C49D87;
     position: relative;
     width: 250px;
-    height: 500px;
+    height: 100%;
     padding: 20px;
     transition: all 0.5 ease;
 }
 
 #name, #address, #phone, #website {
     width: 25%;
-    background-color: #2D656D;
+    background-color: #E9D5CD;
     margin: 10px;
     height: 50%;
     
