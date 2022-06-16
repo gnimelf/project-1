@@ -1,35 +1,38 @@
+
+
 header {
     background: #DAB88B;
     text-align: center;
-    
-    
-    
+    padding: 20px;
 
 }
 main {
     display: flex;
+    z-index: auto;
     height: 100%;
-    
+    margin: 20px;
 
 }
 
 
-
-
-.placeholder {
-    
-    
+#search-results {
     
 }
 
-.wrapper .sidebar {
-    background-color: crimson;
+#wrapper #sidebar {
+    background-color: #2D656D;
     position: relative;
-    top: 0;
-    left: 0;
-    width: 200px;
+    width: 250px;
     height: 500px;
     padding: 20px;
     transition: all 0.5 ease;
 }
 
+.container {
+    background-color:#C49D87;
+    width: 800px;
+    height: 100px;
+    padding: 20px;
+    margin: 10px;
+    
+}
