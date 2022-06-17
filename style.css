@@ -1,0 +1,32 @@
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #131F32;
+}
+
+body {
+    background-color: #E9D5CD;
+}
+
+header {
+    background-color: #2D656D;
+    height: 75px;
+}
+
+#sidebar {
+    position: relative;
+    top: 20px;
+    left: 20px;
+    width: 400px;
+}
+
+.input-is-normal {
+    width: 250px;
+    height: 40px;
+
+}
+
+.button-is-info-is-rounded {
+    background-color: #819FA6;
+    border-radius: 25px;
+    padding: 0px;
+}
