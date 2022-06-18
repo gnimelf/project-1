@@ -9,8 +9,23 @@ body {
 
 header {
     background-color: #2D656D;
-    height: 75px;
+    height: 100px;
 }
+
+img {
+    height: 100px;
+    width: 120px;
+}
+
+main {
+    display: flex;
+}
+
+footer {
+    text-align: center;
+    font-size: smaller;
+}
+
 
 #sidebar {
     position: relative;
@@ -19,14 +34,28 @@ header {
     width: 400px;
 }
 
+#search-results {
+    position: relative;
+    top: 20px;
+    right: 20px;
+}
+
+
+
+
 .input-is-normal {
     width: 250px;
     height: 40px;
-
 }
 
 .button-is-info-is-rounded {
     background-color: #819FA6;
     border-radius: 25px;
     padding: 0px;
+}
+
+.box {
+    width: 1000px;
+    padding: 20px;
+    margin: 20px;
 }
