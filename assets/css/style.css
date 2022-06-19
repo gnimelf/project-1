@@ -31,33 +31,42 @@ footer{
 }
 .container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     border: 2px solid #2D656D ;
     background-color: #e2bca6;
     width: 100%;
-    height: 100px;
     padding: 20px;
     margin: 10px;
-
 }
 
 .bar-info {
     width: 25%;
     background-color: #E9D5CD;
+    word-wrap: break-word;
+    padding: 10px;
+    border-radius: 5px;
     margin: 10px;
-    height: 50%;
+    width:150px;
+    height: 80px;
 }
 
 #search-results {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 75px;
 
-    width: 100%;
-    margin-bottom: 65px;
+}
 
+#sidebar {
+    width: 300px;
 }
 
 #wrapper #sidebar {
     background-color: #C49D87;
     position: relative;
-    width: 100%;
+
     height: 100%;
     padding: 20%;
     transition: all 0.5 ease;

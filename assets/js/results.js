@@ -10,27 +10,38 @@ var obLat = '';
 var obLon = '';
 var obBase = `https://api.openbrewerydb.org/breweries?by_dist=${obLat},${obLon}`;
 
-var count = 10;
+var breweryData = [];
 
 
 // Get the parameters past 
 function getBreweryInfo() {
     
-    for (var i=0; i<count; i++){
+    for (var i=0; i<breweryData.length; i++){
         var brewContainer = $("<section>");
         brewContainer.attr("class", "container box");
         var brewName = $("<div>");
         brewName.attr("class", "bar-info");
+        brewName.html(`<strong>Name:</strong> <br>${breweryData[i].name}`);
         brewContainer.append(brewName);
+
         var brewAddress = $("<div>");
         brewAddress.attr("class", "bar-info");
+        brewAddress.html(`<strong>Address:</strong> <br>${breweryData[i].street} ${breweryData[i].city} ${breweryData[i].state}`);
         brewContainer.append(brewAddress);
+        
         var brewPhone = $("<div>");
         brewPhone.attr("class", "bar-info");
-        brewContainer.append(brewPhone);
+        if (breweryData[i].phone != null) {
+            brewPhone.html(`<strong>Phone:</strong><br>${breweryData[i].phone}`);
+            brewContainer.append(brewPhone);
+        }
+        
         var brewURL = $("<div>");
         brewURL.attr("class", "bar-info");
-        brewContainer.append(brewURL);
+        if (breweryData[i].website_url != null){
+            brewURL.html(`<strong>Website:</strong> <br><a href=${breweryData[i].website_url}>Link</a>`);
+            brewContainer.append(brewURL);
+        }
         searchResults.append(brewContainer);
     }
 }
@@ -38,21 +49,30 @@ function getBreweryInfo() {
 function getlatlon(event){
     var btnId = event.target.id;
     if (btnId === "search-btn"){
+        $('#search-results .container').remove();
         mqLocation = searchInput.val();
-        obLat = 40.520546
-        obLon = -81.474087
-        // fetch(`${mqBase}&location=${mqLocation}`)
-        // .then((response) => {
-        //     return response.json();
-        // }).then ((data) => {
-        //     var latLonData = data.results[0].locations[0].displayLatLng;
-        //     obLat = latLonData.lat;
-        //     obLon = latLonData.lng;
-        //     console.obBase
-        // });
-        console.log(`https://api.openbrewerydb.org/breweries?by_dist=${obLat},${obLon}`);
+        fetch(`${mqBase}&location=${mqLocation}`)
+        .then((response) => {
+            return response.json();
+        }).then ((data) => {
+            var latLonData = data.results[0].locations[0].displayLatLng;
+            obLat = latLonData.lat;
+            obLon = latLonData.lng;
+            // console.obBase
+            fetch(`https://api.openbrewerydb.org/breweries?by_dist=${obLat},${obLon}`)
+            .then((response)=>{
+                return response.json();
+            }).then ((data)=>{
+                console.log(data);
+                breweryData = data;
+                getBreweryInfo();
+            });
+        });
+
+
+        
     }
-    getBreweryInfo();
+   
 }
 
 searchBtn.on("click", getlatlon);
