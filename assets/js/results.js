@@ -1,9 +1,10 @@
 var searchResults = $("#search-results");
 var searchInput = $("#search-input");
+var searchBtn = $("#search-btn");
 
 var mqKey = "d36a3PmpJeM5TrBfITgIT1DL7zO42cHl";
 var mqLocation = "";
-var mqBase = `http://www.mapquestapi.com/geocoding/v1/address?key=${mqKey}&location=${mqLocation}`;
+var mqBase = `http://www.mapquestapi.com/geocoding/v1/address?key=${mqKey}`;
 
 var obLat = '';
 var obLon = '';
@@ -17,7 +18,7 @@ function getBreweryInfo() {
     
     for (var i=0; i<count; i++){
         var brewContainer = $("<section>");
-        brewContainer.attr("class", "container");
+        brewContainer.attr("class", "container box");
         var brewName = $("<div>");
         brewName.attr("class", "bar-info");
         brewContainer.append(brewName);
@@ -34,14 +35,24 @@ function getBreweryInfo() {
     }
 }
 
-function getlatlon(){
-
+function getlatlon(event){
+    var btnId = event.target.id;
+    if (btnId === "search-btn"){
+        mqLocation = searchInput.val();
+        obLat = 40.520546
+        obLon = -81.474087
+        // fetch(`${mqBase}&location=${mqLocation}`)
+        // .then((response) => {
+        //     return response.json();
+        // }).then ((data) => {
+        //     var latLonData = data.results[0].locations[0].displayLatLng;
+        //     obLat = latLonData.lat;
+        //     obLon = latLonData.lng;
+        //     console.obBase
+        // });
+        console.log(`https://api.openbrewerydb.org/breweries?by_dist=${obLat},${obLon}`);
+    }
+    getBreweryInfo();
 }
 
-getBreweryInfo();
-            // <section class="container">
-            //     <div class="bar-name">name</div>
-            //     <div id="bar-address">address</div>
-            //     <div id="bar-phone">phone</div>
-            //     <div id="bar-website">website</div>
-            // </section>
+searchBtn.on("click", getlatlon);
