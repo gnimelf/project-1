@@ -12,6 +12,22 @@ var obBase = `https://api.openbrewerydb.org/breweries?by_dist=${obLat},${obLon}`
 
 var breweryData = [];
 
+function retrieveParams(){
+    var params = document.location.search.split('=');
+    console.log(params);
+    mqLocation = params[1];
+    getlatlon();
+    
+}
+
+function getInputValue(event){
+    var btnId = event.target.id;
+    if (btnId === "search-btn" || mqLocation != ""){
+        mqLocation = searchInput.val();
+        getlatlon();
+    }
+}
+
 
 // Get the parameters past 
 function getBreweryInfo() {
@@ -46,33 +62,28 @@ function getBreweryInfo() {
     }
 }
 
-function getlatlon(event){
-    var btnId = event.target.id;
-    if (btnId === "search-btn"){
-        $('#search-results .container').remove();
-        mqLocation = searchInput.val();
-        fetch(`${mqBase}&location=${mqLocation}`)
-        .then((response) => {
+function getlatlon(){
+    $('#search-results .container').remove();
+    fetch(`${mqBase}&location=${mqLocation}`)
+    .then((response) => {
+        return response.json();
+    }).then ((data) => {
+        var latLonData = data.results[0].locations[0].displayLatLng;
+        obLat = latLonData.lat;
+        obLon = latLonData.lng;
+        // console.obBase
+        fetch(`https://api.openbrewerydb.org/breweries?by_dist=${obLat},${obLon}`)
+        .then((response)=>{
             return response.json();
-        }).then ((data) => {
-            var latLonData = data.results[0].locations[0].displayLatLng;
-            obLat = latLonData.lat;
-            obLon = latLonData.lng;
-            // console.obBase
-            fetch(`https://api.openbrewerydb.org/breweries?by_dist=${obLat},${obLon}`)
-            .then((response)=>{
-                return response.json();
-            }).then ((data)=>{
-                console.log(data);
-                breweryData = data;
-                getBreweryInfo();
-            });
+        }).then ((data)=>{
+            console.log(data);
+            breweryData = data;
+            getBreweryInfo();
         });
-
-
-        
-    }
-   
+    });
 }
 
+retrieveParams();
+
 searchBtn.on("click", getlatlon);
+
