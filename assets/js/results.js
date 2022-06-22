@@ -16,8 +16,8 @@ function retrieveParams(){
     var params = document.location.search.split('=');
     console.log(params);
     mqLocation = params[1];
+    location.assign("");
     getlatlon();
-    
 }
 
 function getInputValue(event){
@@ -27,7 +27,6 @@ function getInputValue(event){
         getlatlon();
     }
 }
-
 
 // Get the parameters past 
 function getBreweryInfo() {
@@ -42,8 +41,11 @@ function getBreweryInfo() {
 
         var brewAddress = $("<div>");
         brewAddress.attr("class", "bar-info");
-        brewAddress.html(`<strong>Address:</strong> <br>${breweryData[i].street} ${breweryData[i].city} ${breweryData[i].state}`);
-        brewContainer.append(brewAddress);
+        if (breweryData[i].street != null){
+            brewAddress.html(`<strong>Address:</strong> <br>${breweryData[i].street} ${breweryData[i].city} ${breweryData[i].state}`);
+            brewContainer.append(brewAddress);    
+        }
+
         
         var brewPhone = $("<div>");
         brewPhone.attr("class", "bar-info");
@@ -68,10 +70,11 @@ function getlatlon(){
     .then((response) => {
         return response.json();
     }).then ((data) => {
+        console.log(data);
         var latLonData = data.results[0].locations[0].displayLatLng;
         obLat = latLonData.lat;
         obLon = latLonData.lng;
-        // console.obBase
+        console.obBase
         fetch(`https://api.openbrewerydb.org/breweries?by_dist=${obLat},${obLon}`)
         .then((response)=>{
             return response.json();
@@ -85,5 +88,5 @@ function getlatlon(){
 
 retrieveParams();
 
-searchBtn.on("click", getlatlon);
+searchBtn.on("click", getInputValue);
 
