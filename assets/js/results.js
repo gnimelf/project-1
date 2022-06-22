@@ -16,7 +16,6 @@ function retrieveParams(){
     var params = document.location.search.split('=');
     console.log(params);
     mqLocation = params[1];
-    location.assign("");
     getlatlon();
 }
 
