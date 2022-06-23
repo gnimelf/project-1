@@ -1,23 +1,390 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/search.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/fontawesome.css">
+    <link rel="stylesheet" href="./assets/css/search.css" />
     <title>Beer Chaser Locator</title>
-</head>
-<body>
+  </head>
+  <body>
     <section id="search">
-        <img id="logo" src="./assets/images/circle_logo_dark.png" alt="">
-        <input id="search-input" class="input is-large" type="text" placeholder="Astoria,OR">
-        <button id="search-btn" class="button is-info is-rounded">Search</button>    
+      <svg
+        id="logo"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:krita="http://krita.org/namespaces/svg/krita"
+        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+        width="150%"
+        height="150%"
+        <!-- viewBox="0 0 200 200" -->
+      >
+        <defs>
+          <linearGradient
+            id="gradient0"
+            gradientUnits="objectBoundingBox"
+            x1="0.00556578268524877"
+            y1="0.496723032333368"
+            x2="0.997367722382548"
+            y2="0.505155470074657"
+            spreadMethod="pad"
+          >
+            <stop
+              stop-color="#fced54"
+              offset="0.452229291200638"
+              stop-opacity="1"
+            />
+            <stop
+              stop-color="#f8b202"
+              offset="0.798301458358765"
+              stop-opacity="1"
+            />
+          </linearGradient>
+          <linearGradient
+            id="gradient1"
+            gradientUnits="objectBoundingBox"
+            x1="0.00665386477887453"
+            y1="0.505273060407711"
+            x2="0.995694044959948"
+            y2="0.514722628387141"
+            spreadMethod="pad"
+          >
+            <stop
+              stop-color="#ffffff"
+              offset="0.452229291200638"
+              stop-opacity="1"
+            />
+            <stop
+              stop-color="#ffe4c8"
+              offset="0.798301458358765"
+              stop-opacity="1"
+            />
+          </linearGradient>
+          <linearGradient
+            id="gradient2"
+            gradientUnits="objectBoundingBox"
+            x1="0.0027884240211386"
+            y1="0.529915540334382"
+            x2="1.00260150832732"
+            y2="0.478752861221272"
+            spreadMethod="pad"
+          >
+            <stop
+              stop-color="#ffffff"
+              offset="0.439490437507629"
+              stop-opacity="1"
+            />
+            <stop
+              stop-color="#ffe4c8"
+              offset="0.798301458358765"
+              stop-opacity="1"
+            />
+          </linearGradient>
+        </defs>
+        <circle
+          id="shape0"
+          transform="matrix(0.999999898765579 0 0 0.999999898765579 6.23999936829721 6.23999936829721)"
+          r="93.24"
+          cx="93.24"
+          cy="93.24"
+          fill="#132033"
+          fill-rule="evenodd"
+          stroke-opacity="0"
+          stroke="#000000"
+          stroke-width="0"
+          stroke-linecap="square"
+          stroke-linejoin="bevel"
+        />
+        <path
+          id="shape01"
+          transform="matrix(0.999999835712741 0 0 0.934369473690626 23.5199970478494 37.3865200528731)"
+          fill="#132033"
+          stroke="#819fa7"
+          stroke-width="0.7824"
+          stroke-linecap="square"
+          stroke-linejoin="miter"
+          stroke-miterlimit="2"
+          d="M0 7.92L152.36 0"
+          sodipodi:nodetypes="cc"
+        />
+        <path
+          id="shape01"
+          transform="matrix(0.99999984619329 0 0 0.934369483483331 16.4202474417612 59.9760747612662)"
+          fill="#132033"
+          stroke="#819fa7"
+          stroke-width="0.7824"
+          stroke-linecap="square"
+          stroke-linejoin="miter"
+          stroke-miterlimit="2"
+          d="M0 7.92L162.36 0"
+          sodipodi:nodetypes="cc"
+        />
+        <path
+          id="shape011"
+          transform="matrix(0.99999984619329 0 0 0.934369483483331 19.3002467421733 110.343110637418)"
+          fill="#132033"
+          stroke="#819fa7"
+          stroke-width="0.7824"
+          stroke-linecap="square"
+          stroke-linejoin="miter"
+          stroke-miterlimit="2"
+          d="M0 7.92L162.36 0"
+          sodipodi:nodetypes="cc"
+        />
+        <path
+          id="shape02"
+          transform="matrix(0.99999984619329 0 0 0.934369483483331 31.9002437468968 152.988191683676)"
+          fill="#132033"
+          stroke="#819fa7"
+          stroke-width="0.7824"
+          stroke-linecap="square"
+          stroke-linejoin="miter"
+          stroke-miterlimit="2"
+          d="M0 6.63901L136.1 0"
+          sodipodi:nodetypes="cc"
+        />
+        <path
+          id="shape03"
+          transform="matrix(0.99999984619329 0 0 0.934369483483331 17.1402472706026 52.3384087055006)"
+          fill="#132033"
+          stroke="#819fa7"
+          stroke-width="0.7824"
+          stroke-linecap="square"
+          stroke-linejoin="miter"
+          stroke-miterlimit="2"
+          d="M0 4.10828C28.0732 2.73885 56.1465 1.36943 84.2197 0"
+          sodipodi:nodetypes="cc"
+        />
+        <path
+          id="shape04"
+          transform="matrix(0.999999815609659 0 0 0.934369454906916 18.3464767649468 70.7827908546678)"
+          fill="#132033"
+          stroke="#819fa7"
+          stroke-width="0.7824"
+          stroke-linecap="square"
+          stroke-linejoin="miter"
+          stroke-miterlimit="2"
+          d="M0 4.10828L84.2197 0"
+          sodipodi:nodetypes="cc"
+        />
+        <path
+          id="shape05"
+          transform="matrix(0.999999815609659 0 0 0.934369454906916 19.426476508209 102.540763189858)"
+          fill="#132033"
+          stroke="#819fa7"
+          stroke-width="0.7824"
+          stroke-linecap="square"
+          stroke-linejoin="miter"
+          stroke-miterlimit="2"
+          d="M0 4.10828L84.2197 0"
+          sodipodi:nodetypes="cc"
+        />
+        <path
+          id="shape06"
+          transform="matrix(0.999999815609659 0 0 0.934369454906916 28.0664744543053 144.448474750938)"
+          fill="#132033"
+          stroke="#819fa7"
+          stroke-width="0.7824"
+          stroke-linecap="square"
+          stroke-linejoin="miter"
+          stroke-miterlimit="2"
+          d="M0 4.10828L84.2197 0"
+          sodipodi:nodetypes="cc"
+        />
+        <path
+          id="shape02"
+          transform="matrix(0.984134983197293 -0.177420422366696 0.177420422366696 0.984134983197293 52.9437337110413 36.6491209415068)"
+          fill="url(#gradient0)"
+          fill-rule="evenodd"
+          stroke-opacity="0"
+          stroke="#000000"
+          stroke-width="0.5568"
+          stroke-linecap="square"
+          stroke-linejoin="bevel"
+          d="M0.229176 0.444322C-0.213111 12.0681 -0.0152202 19.96 0.822846 24.12C2.07995 30.36 3.40242 61.56 4.78285 76.8C6.16327 92.04 9.46285 106.32 9.22285 112.68C8.98285 119.04 4.42285 136.56 4.66285 140.88C4.90285 145.2 5.14285 146.4 9.10285 146.88C13.0628 147.36 54.8378 149.7 58.3178 147.42C61.7978 145.14 61.7828 145.95 62.5628 142.425C63.3428 138.9 60.7028 133.8 59.9828 129.96C59.2628 126.12 58.0628 121.44 57.7028 118.8C57.3428 116.16 57.0428 116.94 56.9828 110.52C56.9428 106.24 59.7028 77.48 65.2628 24.24C65.8815 16.16 66.201 8.08 65.8628 0"
+          sodipodi:nodetypes="ccccccccccccc"
+        />
+        <path
+          id="shape03"
+          transform="matrix(0.985441327776713 -0.170014884451867 0.170014884451867 0.985441327776713 52.8687322104642 35.3158398423118)"
+          fill="url(#gradient1)"
+          fill-rule="evenodd"
+          stroke-opacity="0"
+          stroke="#000000"
+          stroke-width="0"
+          stroke-linecap="square"
+          stroke-linejoin="bevel"
+          d="M0.128372 0.443594C-0.152426 14.9425 0.0274344 22.9906 0.66795 24.588C1.30846 26.1853 22.8897 26.0561 65.4117 24.2003C66.0326 16.1335 66.3534 8.06675 66.014 0"
+          sodipodi:nodetypes="cccc"
+        />
+        <path
+          id="shape1"
+          transform="matrix(0.999999835712741 0 0 0.999999835712741 173.818112349673 29.6640890396559)"
+          fill="#fee169"
+          fill-rule="evenodd"
+          stroke="#ffffff"
+          stroke-width="0.5568"
+          stroke-linecap="square"
+          stroke-linejoin="bevel"
+          d="M0 0"
+          sodipodi:nodetypes="c"
+        />
+        <path
+          id="shape04"
+          transform="matrix(0.984906068682302 -0.173088726664351 0.173088726664351 0.984906068682302 51.9091038573985 29.10657502485)"
+          fill="url(#gradient2)"
+          fill-rule="evenodd"
+          stroke-opacity="0"
+          stroke="#000000"
+          stroke-width="0"
+          stroke-linecap="square"
+          stroke-linejoin="bevel"
+          d="M17.9145 1.04361C23.802 3.92861 20.4235 2.6423 23.3594 3.34944C26.2953 4.05658 25.881 3.96256 28.5385 3.23296C31.1959 2.50336 32.7615 3.33464 35.1933 2.06185C37.6251 0.789056 38.2651 0.831482 39.3316 0.237512C40.3982 -0.356457 43.598 0.279939 45.3045 0.873908C47.0111 1.46788 47.3098 1.25575 47.9071 1.29817C48.5043 1.3406 52.856 3.03766 53.1547 3.12251C53.3538 3.17908 54.0506 3.53263 55.2452 4.18317L56.8238 4.35287C57.1366 4.89028 57.7624 5.25797 58.7009 5.45596C60.1088 5.75295 63.2232 5.28625 64.2045 5.8378C64.8587 6.20549 65.3849 6.57319 65.7831 6.94088C23.9908 7.04979 2.32122 7.13111 0.774382 7.18484C-1.54587 7.26542 2.03851 5.95519 2.54894 5.67796C3.71348 5.04547 4.49729 4.87593 4.6456 4.46296C4.78781 4.06698 5.04397 3.66259 5.41405 3.24979C5.32873 2.71239 5.69847 2.30226 6.52331 2.01942C7.76055 1.59516 7.1206 1.59516 8.0592 1.55273C8.9978 1.5103 9.21112 1.38303 9.9364 1.00119C10.6617 0.61935 11.259 0.661776 12.7096 0.449644C14.1601 0.237512 14.1601 0.237512 17.9145 1.04361Z"
+          sodipodi:nodetypes="cccccccccccccccccccccc"
+        />
+        <path
+          id="shape05"
+          transform="matrix(1.08598628169315 -0.190424114842933 0.172711639809573 0.984972264025645 66.0091554097162 39.0343085401268)"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="3.4608"
+          stroke-linecap="square"
+          stroke-linejoin="bevel"
+          d="M0 0C0 21.6876 2.03646 49.655 2.03646 71.7855"
+          sodipodi:nodetypes="cc"
+        />
+        <path
+          id="shape11"
+          transform="matrix(1.08598628169315 -0.190424114842933 0.172711639809573 0.984972264025645 105.461477855374 31.2635351101856)"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="0.7824"
+          stroke-linecap="square"
+          stroke-linejoin="bevel"
+          d="M3.0547 0C3.0547 25.1968 0 50.0581 0 74.6705"
+          sodipodi:nodetypes="cc"
+        />
+        <path
+          id="shape06"
+          transform="matrix(0.999966011816598 -0.00822475757262395 0.00822475757262395 0.999966011816598 122.40572148422 143.214097883287)"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="0.7824"
+          stroke-linecap="square"
+          stroke-linejoin="miter"
+          stroke-miterlimit="2"
+          d="M0 0L9.72 22.32"
+          sodipodi:nodetypes="cc"
+        />
+        <path
+          id="shape12"
+          transform="matrix(0.986982252355555 -0.160828184596698 0.160828184596698 0.986982252355555 93.8264272832772 149.149622744206)"
+          fill="none"
+          stroke="#ffffff"
+          stroke-width="2.4504"
+          stroke-linecap="square"
+          stroke-linejoin="miter"
+          stroke-miterlimit="2"
+          d="M0.33941 0L0 16.7442"
+          sodipodi:nodetypes="cc"
+        />
+        <circle
+          id="shape07"
+          transform="matrix(0.999999898765579 0 0 0.999999898765579 6.23999936829721 6.23999936829721)"
+          r="93.24"
+          cx="93.24"
+          cy="93.24"
+          fill="none"
+          stroke="#819fa7"
+          stroke-width="14.3"
+          stroke-linecap="square"
+          stroke-linejoin="bevel"
+        />
+        <text
+          id="shape08"
+          krita:useRichText="true"
+          krita:textVersion="2"
+          transform="matrix(0.9999996682409 -0.000578743137708792 0.000578743137708792 0.9999996682409 20.3173659888518 132.190110820088)"
+          fill="#819fa7"
+          stroke-opacity="0"
+          stroke="#000000"
+          stroke-width="0"
+          stroke-linecap="square"
+          stroke-linejoin="bevel"
+          font-family="Rubik Glitch"
+          font-size="96"
+          font-size-adjust="0.4375"
+          font-stretch="normal"
+          letter-spacing="0"
+          word-spacing="0"
+        >
+          <tspan x="0">B</tspan>
+        </text>
+        <text
+          id="shape13"
+          krita:useRichText="true"
+          krita:textVersion="2"
+          transform="matrix(0.999999835712741 0 0 0.999999835712741 123.119980008603 209.159974426478)"
+          fill="#000000"
+          stroke-opacity="0"
+          stroke="#000000"
+          stroke-width="0"
+          stroke-linecap="square"
+          stroke-linejoin="bevel"
+        ></text>
+        <text
+          id="shape011"
+          krita:useRichText="true"
+          krita:textVersion="2"
+          transform="matrix(0.999999898765579 0 0 0.999999898765579 15.5999978425545 25.0799971850871)"
+          fill="#000000"
+          stroke-opacity="0"
+          stroke="#000000"
+          stroke-width="0"
+          stroke-linecap="square"
+          stroke-linejoin="bevel"
+        ></text>
+        <text
+          id="shape09"
+          krita:useRichText="true"
+          krita:textVersion="2"
+          transform="matrix(0.999999802469199 0 0 0.999999802469199 107.959981934744 131.699969330501)"
+          fill="#819fa7"
+          stroke-opacity="0"
+          stroke="#000000"
+          stroke-width="0"
+          stroke-linecap="square"
+          stroke-linejoin="bevel"
+          font-family="Rubik Glitch"
+          font-size="96"
+          font-size-adjust="0.4375"
+          font-stretch="normal"
+          letter-spacing="0"
+          word-spacing="0"
+        >
+          <tspan x="0">C</tspan>
+        </text>
+      </svg>
+      <input
+        id="search-input"
+        class="input is-large"
+        type="text"
+        placeholder="Astoria,OR"
+      />
+      <button id="search-btn" class="button is-info is-rounded">Search</button>
+      
     </section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" 
-    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" 
-    crossorigin="anonymous" 
-    referrerpolicy="no-referrer"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="./assets/js/search.js"></script>
-</body>
+  </body>
 </html>
