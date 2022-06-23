@@ -420,8 +420,10 @@ function markFavorite(event){
     if(event.target.textContent == "☆") {
         $(`#${tar_id }`).html("&starf;");
         addToFavorites(event);
+        // console.log(event);
     } else {
         $(`#${tar_id}`).html("&star;");
+        addToFavorites(event);
     }
 }
 
@@ -435,7 +437,7 @@ function getBreweryInfo(data) {
         var favBtn = $("<button>");
         favBtn.html("&star;");
         favBtn.attr("class", "fav-btn");
-        favBtn.attr("id", `btn${i}`)
+        favBtn.attr("id", `btn-${i}`)
         brewContainer.append(favBtn);
 
         var brewName = $("<div>");
@@ -499,8 +501,25 @@ function getlatlon(){
 }
 
 // Add to favorites
-function addToFavorites(){
-
+function addToFavorites(event){
+    var cardBreweryName =event.target.parentElement.childNodes[1].textContent
+    var cardIdNum = event.target.id.split("-")[1];
+    var foundName = false;
+    
+    for (var i=0; i<favoritesAsJSON.length; i++){
+        if (`Name: ${favoritesAsJSON[i].name}` == cardBreweryName){
+            foundName = true
+            if (favoritesAsJSON.length==1){
+                favoritesAsJSON = [];
+            }else {
+               favoritesAsJSON.splice([i], 1); 
+            }
+        }
+    }
+    if (!foundName){
+        favoritesAsJSON.push(breweryData[cardIdNum]);
+    }
+    // saveFavoriteData();
 }
 
 // Grab localstorage data
