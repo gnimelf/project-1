@@ -11,7 +11,7 @@ var obLat = '';
 var obLon = '';
 var obBase = `https://api.openbrewerydb.org/breweries?by_dist=${obLat},${obLon}`;
 
-var favoritesAsString = localStorage.getItem['brewFavorites'];
+var favoritesAsString = localStorage.getItem('brewFavorites');
 var favoritesAsJSON = [];
 
 // var breweryData = [];
@@ -411,7 +411,7 @@ function getInputValue(event){
     var btnId = event.target.id;
     if (btnId === "search-btn" || mqLocation != ""){
         mqLocation = searchInput.val();
-        // getlatlon();
+        getlatlon();
     }
 }
 
@@ -420,7 +420,7 @@ function markFavorite(event){
     if(event.target.textContent == "☆") {
         $(`#${tar_id }`).html("&starf;");
         addToFavorites(event);
-        // console.log(event);
+        console.log(event);
     } else {
         $(`#${tar_id}`).html("&star;");
         addToFavorites(event);
@@ -435,9 +435,16 @@ function getBreweryInfo(data) {
         brewContainer.attr("class", "container box");
 
         var favBtn = $("<button>");
-        favBtn.html("&star;");
+        var isAFav = isAFavorite(breweryData[i].name)
+        if (isAFav){
+            console.log("found a fav");
+            favBtn.html("&starf;");
+        } else {
+            favBtn.html("&star;");
+        }
+        
         favBtn.attr("class", "fav-btn");
-        favBtn.attr("id", `btn-${i}`)
+        favBtn.attr("id", `btn-${i}`);
         brewContainer.append(favBtn);
 
         var brewName = $("<div>");
@@ -477,6 +484,11 @@ function getBreweryInfo(data) {
         
         searchResults.append(brewContainer);
     }
+    $(".fav-btn").ready(function(){
+        favoriteBtnEl = $(".fav-btn");
+        // console.log(favoriteBtnEl);
+        favoriteBtnEl.on("click", markFavorite);
+    })
 }
 
 
@@ -498,6 +510,7 @@ function getlatlon(){
             getBreweryInfo(breweryData);
         });
     });
+    return;
 }
 
 // Add to favorites
@@ -519,19 +532,44 @@ function addToFavorites(event){
     if (!foundName){
         favoritesAsJSON.push(breweryData[cardIdNum]);
     }
-    // saveFavoriteData();
+    saveFavoriteData();
+    return;
 }
 
 // Grab localstorage data
 function parseFavorites(){
-    favoritesAsJSON = JSON.parse(favoritesAsString);
-    console.log(favoritesAsJSON);
+    if (!localStorage.getItem('brewFavorites')){
+        localStorage.setItem('brewFavorites', '');
+    } else {
+       favoritesAsJSON = JSON.parse(localStorage.getItem('brewFavorites'));
+        console.log(favoritesAsJSON);      
+    }
+    
+    return;
 }
 
+// Save
+function saveFavoriteData(){
+    favoritesAsString = JSON.stringify(favoritesAsJSON);
+    localStorage.setItem("brewFavorites", favoritesAsString);
+}
+
+// compare brewery results with favorites (localStore)
+function isAFavorite(brewName){
+    var found = false;
+    for (var i=0; i<favoritesAsJSON.length; i++){
+        if (favoritesAsJSON[i].name == brewName){
+            found = true;
+        }
+    }
+    return found;
+}
+
+parseFavorites();
 retrieveParams();
 $(".fav-btn").ready(function(){
     favoriteBtnEl = $(".fav-btn");
-    console.log(favoriteBtnEl);
+    // console.log(favoriteBtnEl);
     favoriteBtnEl.on("click", markFavorite);
 })
 searchBtn.on("click", getInputValue);
