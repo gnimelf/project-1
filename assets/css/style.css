@@ -1,4 +1,4 @@
-:root{
+:root {
     --accent: #2D656D;
     --bodyColor: #e6d8d0;
     --infodBg: #e2bca6;
@@ -21,8 +21,8 @@ p {
     font-size: larger;
 }
 
-body{
-    background: var(--bodyColor); 
+body {
+    background: var(--bodyColor);
     position: relative;
 }
 
@@ -32,9 +32,9 @@ main {
     margin: 20px;
 }
 
-footer{
+footer {
     text-align: center;
-    color:#819FA6;
+    color: #819FA6;
     background-color: var(--accent);
     position: absolute;
     width: 100%;
@@ -60,11 +60,11 @@ footer{
     padding: 10px;
     border-radius: 5px;
     margin: 10px;
-    width:150px;
+    width: 150px;
     height: 100px;
 }
 
-.fav-btn{
+.fav-btn {
     position: absolute;
     right: 20px;
     top: 0px;
@@ -78,7 +78,8 @@ footer{
     display: flex;
 }
 
-#search-btn, #favorite-btn{
+#search-btn,
+#favorite-btn {
     background-color: #819FA6;
     margin: 10px;
 }
@@ -90,7 +91,7 @@ footer{
     margin-bottom: 75px;
 }
 
-#search{
+#search {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -108,11 +109,11 @@ footer{
     transition: all 0.5 ease;
 }
 
-#search-input{
+#search-input {
     width: 70%;
 }
 
-#p-footer{
+#p-footer {
     color: #819FA6;
     margin-top: 15px;
     font-size: smaller;
