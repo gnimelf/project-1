@@ -9,7 +9,16 @@ header {
     background: var(--accent);
     text-align: center;
     padding: 10px;
-    height: 50px;
+    height: 75px;
+}
+
+img {
+    width: 60px;
+}
+
+p {
+    margin-bottom: 10px;
+    font-size: larger;
 }
 
 body{
@@ -25,6 +34,7 @@ main {
 
 footer{
     text-align: center;
+    color:#819FA6;
     background-color: var(--accent);
     position: absolute;
     width: 100%;
@@ -64,6 +74,15 @@ footer{
     cursor: pointer;
 }
 
+#btn-section {
+    display: flex;
+}
+
+#search-btn, #favorite-btn{
+    background-color: #819FA6;
+    margin: 10px;
+}
+
 #search-results {
     display: flex;
     justify-content: space-around;
@@ -91,4 +110,10 @@ footer{
 
 #search-input{
     width: 70%;
+}
+
+#p-footer{
+    color: #819FA6;
+    margin-top: 15px;
+    font-size: smaller;
 }
