@@ -1,4 +1,5 @@
-var favoriteBtnEl = $(".fav-btn");
+var favBtnEl = $(".fav-btn");
+var favoriteBtnEl = $("#favorite-btn");
 var searchResults = $("#search-results");
 var searchInput = $("#search-input");
 var searchBtn = $("#search-btn");
@@ -47,6 +48,11 @@ function markFavorite(event){
     }
 }
 
+function getFavoriteData(){
+    searchResults.html('');
+    getBreweryInfo(favoritesAsJSON);
+}
+
 // Get the parameters past 
 function getBreweryInfo(data) {
     
@@ -55,7 +61,7 @@ function getBreweryInfo(data) {
         brewContainer.attr("class", "container box");
 
         var favBtn = $("<button>");
-        var isAFav = isAFavorite(breweryData[i].name)
+        var isAFav = isAFavorite(data[i].name)
         if (isAFav){
             console.log("found a fav");
             favBtn.html("&starf;");
@@ -69,13 +75,13 @@ function getBreweryInfo(data) {
 
         var brewName = $("<div>");
         brewName.attr("class", "bar-info");
-        brewName.html(`<strong>Name:</strong> <br>${breweryData[i].name}`);       
+        brewName.html(`<strong>Name:</strong> <br>${data[i].name}`);       
         brewContainer.append(brewName);
 
         var brewAddress = $("<div>");
         brewAddress.attr("class", "bar-info");
-        if (breweryData[i].street != null){
-            brewAddress.html(`<strong>Address:</strong> <br>${breweryData[i].street} ${breweryData[i].city} ${breweryData[i].state}`);
+        if (data[i].street != null){
+            brewAddress.html(`<strong>Address:</strong> <br>${data[i].street} ${data[i].city} ${data[i].state}`);
             brewContainer.append(brewAddress);
         } else {
             brewAddress.html(`<br>`);
@@ -84,8 +90,8 @@ function getBreweryInfo(data) {
         
         var brewPhone = $("<div>");
         brewPhone.attr("class", "bar-info");
-        if (breweryData[i].phone != null) {
-            brewPhone.html(`<strong>Phone:</strong><br>${breweryData[i].phone}`);
+        if (data[i].phone != null) {
+            brewPhone.html(`<strong>Phone:</strong><br>${data[i].phone}`);
             brewContainer.append(brewPhone);
         } else {
             brewPhone.html(`<strong>Phone:</strong><br>N/A`);
@@ -94,20 +100,18 @@ function getBreweryInfo(data) {
         
         var brewURL = $("<div>");
         brewURL.attr("class", "bar-info");
-        if (breweryData[i].website_url != null){
-            brewURL.html(`<strong>Website:</strong> <br><a href=${breweryData[i].website_url}>Link</a>`);
+        if (data[i].website_url != null){
+            brewURL.html(`<strong>Website:</strong> <br><a href=${data[i].website_url}>Link</a>`);
             brewContainer.append(brewURL);
         } else {
             brewURL.html(`<strong>Website:</strong><br>N/A`);
             brewContainer.append(brewURL);
         }
-        
         searchResults.append(brewContainer);
     }
     $(".fav-btn").ready(function(){
-        favoriteBtnEl = $(".fav-btn");
-        // console.log(favoriteBtnEl);
-        favoriteBtnEl.on("click", markFavorite);
+        favBtnEl = $(".fav-btn");
+        favBtnEl.on("click", markFavorite);
     })
 }
 
@@ -188,8 +192,9 @@ function isAFavorite(brewName){
 parseFavorites();
 retrieveParams();
 $(".fav-btn").ready(function(){
-    favoriteBtnEl = $(".fav-btn");
-    // console.log(favoriteBtnEl);
-    favoriteBtnEl.on("click", markFavorite);
+    favBtnEl = $(".fav-btn");
+    // console.log(favBtnEl);
+    favBtnEl.on("click", markFavorite);
 })
 searchBtn.on("click", getInputValue);
+favoriteBtnEl.on("click", getFavoriteData);
