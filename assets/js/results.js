@@ -4,7 +4,7 @@ var searchResults = $("#search-results");
 var searchInput = $("#search-input");
 var searchBtn = $("#search-btn");
 
-var mqKey = "d36a3PmpJeM5TrBfITgIT1DL7zO42cHl";
+var mqKey = "CSvJmkodbs7ZJkzAmlLZhflio90I2Y9n";
 var mqLocation = "";
 var mqBase = `http://www.mapquestapi.com/geocoding/v1/address?key=${mqKey}`;
 
@@ -59,52 +59,51 @@ function getBreweryInfo(data) {
     for (var i=0; i<data.length; i++){
         var brewContainer = $("<section>");
         brewContainer.attr("class", "container box");
-
         var favBtn = $("<button>");
-        var isAFav = isAFavorite(data[i].name)
+        var isAFav = isAFavorite(data[i].name);
         if (isAFav){
             console.log("found a fav");
             favBtn.html("&starf;");
         } else {
             favBtn.html("&star;");
         }
-        
+        favBtn.attr("style", "color: #2D656D");
         favBtn.attr("class", "fav-btn");
         favBtn.attr("id", `btn-${i}`);
         brewContainer.append(favBtn);
 
         var brewName = $("<div>");
         brewName.attr("class", "bar-info");
-        brewName.html(`<strong>Name:</strong> <br>${data[i].name}`);       
+        brewName.html(`<strong style="color: #2D656D">Name:</strong> <br>${data[i].name}`);       
         brewContainer.append(brewName);
 
         var brewAddress = $("<div>");
         brewAddress.attr("class", "bar-info");
         if (data[i].street != null){
-            brewAddress.html(`<strong>Address:</strong> <br>${data[i].street} ${data[i].city} ${data[i].state}`);
+            brewAddress.html(`<strong style="color: #2D656D">Address:</strong> <br>${data[i].street} ${data[i].city} ${data[i].state}`);
             brewContainer.append(brewAddress);
         } else {
-            brewAddress.html(`<br>`);
+            brewAddress.html(`<strong style="color: #2D656D">Address:</strong> <br>N/A`);
             brewContainer.append(brewAddress);
         }
         
         var brewPhone = $("<div>");
         brewPhone.attr("class", "bar-info");
         if (data[i].phone != null) {
-            brewPhone.html(`<strong>Phone:</strong><br>${data[i].phone}`);
+            brewPhone.html(`<strong style="color: #2D656D">Phone:</strong><br>${data[i].phone}`);
             brewContainer.append(brewPhone);
         } else {
-            brewPhone.html(`<strong>Phone:</strong><br>N/A`);
+            brewPhone.html(`<strong style="color: #2D656D">Phone:</strong><br>N/A`);
             brewContainer.append(brewPhone);
         }
         
         var brewURL = $("<div>");
         brewURL.attr("class", "bar-info");
         if (data[i].website_url != null){
-            brewURL.html(`<strong>Website:</strong> <br><a href=${data[i].website_url}>Link</a>`);
+            brewURL.html(`<strong style="color: #2D656D">Website:</strong> <br><a href=${data[i].website_url}>Link</a>`);
             brewContainer.append(brewURL);
         } else {
-            brewURL.html(`<strong>Website:</strong><br>N/A`);
+            brewURL.html(`<strong style="color: #2D656D">Website:</strong><br>N/A`);
             brewContainer.append(brewURL);
         }
         searchResults.append(brewContainer);
