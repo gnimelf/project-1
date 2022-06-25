@@ -14,7 +14,6 @@ var obBase = `https://api.openbrewerydb.org/breweries?by_dist=${obLat},${obLon}`
 
 var favoritesAsString = localStorage.getItem('brewFavorites');
 var favoritesAsJSON = [];
-
 var breweryData = [];
 
 // get data from prev page
