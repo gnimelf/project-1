@@ -47,7 +47,7 @@ function markFavorite(event){
         addToFavorites(event);
     }
 }
-
+// retrieve favorite data
 function getFavoriteData(){
     searchResults.html('');
     getBreweryInfo(favoritesAsJSON);
