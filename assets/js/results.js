@@ -23,7 +23,6 @@ function retrieveParams(){
     console.log(params);
     mqLocation = params[1];
     getlatlon();
-
 }
 
 // get user in put
