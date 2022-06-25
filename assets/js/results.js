@@ -6,7 +6,7 @@ var searchBtn = $("#search-btn");
 
 var mqKey = "CSvJmkodbs7ZJkzAmlLZhflio90I2Y9n";
 var mqLocation = "";
-var mqBase = `http://www.mapquestapi.com/geocoding/v1/address?key=${mqKey}`;
+var mqBase = `https://www.mapquestapi.com/geocoding/v1/address?key=${mqKey}`;
 
 var obLat = '';
 var obLon = '';
