@@ -11,7 +11,13 @@ Hi, we’re the creators of Beer Chasers. We created an easy to use website that
 
 ## Usage
 
-Enter the city into the the search field to find brewerys in that location, and select the search button.
+Enter the city into the the search field to find brewerys in that location, and click the search button. 
+The star will allow you to add the brewerys you like to your favories, which can be retrieve using the button the on the results page.
+
+![screenshot_1](./assets/images/screenshot_1.png)
+
+![screenshot_2](./assets/images/screenshot_2.png)
+
 
 ## Credits
 
