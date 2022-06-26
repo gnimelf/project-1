@@ -16,9 +16,9 @@ The star will allow you to add the brewerys you like to your favories, which can
 
 
 Click image for live link
-[![screenshot_1](https://gnimelf.github.io/project-1/)](./assets/images/screenshot_1.png)
+[![screenshot_1](./assets/images/screenshot_1.png)](https://gnimelf.github.io/project-1/)
 
-[![screenshot_2](https://gnimelf.github.io/project-1/)](./assets/images/screenshot_2.png)
+[![screenshot_2](./assets/images/screenshot_2.png)](https://gnimelf.github.io/project-1/)
 
 
 ## Credits
