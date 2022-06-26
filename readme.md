@@ -15,17 +15,16 @@ Enter the city into the the search field to find brewerys in that location, and 
 
 ## Credits
 
-Collaborators:
-<a href="https://github.com/tajajones2"><img src="https://avatars.githubusercontent.com/u/102881062?v=4" width=50% height=50%>Taja Jones</a>
+### Collaborators:
 
-<div style="width: 60%; height: 60%">
-[![Caitlin Spittler](https://avatars.githubusercontent.com/u/104328339?v=4)](https://github.com/cspitt99)
-<div>
-<div style="width: 60%; height: 60%">
-[![Nick Strang](https://avatars.githubusercontent.com/u/42750309?v=4)](https://github.com/Strangn)
-</div>
+<a href="https://github.com/tajajones2"> <img src="https://avatars.githubusercontent.com/u/102881062?v=4" width=20% height=20%></a>Taja Jones
 
-API's Used:
+<a href="https://github.com/cspitt99"> <img src="https://avatars.githubusercontent.com/u/104328339?v=4" width=20% height=20%></a>Caitlin Spittler
+
+<a href="https://github.com/Strangn"> <img src="https://avatars.githubusercontent.com/u/42750309?v=4" width=20% height=20%></a>Nick Strang
+
+
+### API's Used:
 [![Bulma](https://bulma.io/images/bulma-logo.png)](https://bulma.io/)
 [![OpenBrewery](https://www.openbrewerydb.org/_app/assets/obdb-logo-sm-63b3b090.png)](https://www.openbrewerydb.org/)
 [![MapQuest Developer](https://developer.mapquest.com/static/media/logo.469e1ba3c55d647c4dc6bb71d555e666.svg)](https://developer.mapquest.com/)
