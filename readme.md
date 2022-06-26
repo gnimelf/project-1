@@ -16,9 +16,8 @@ Enter the city into the the search field to find brewerys in that location, and 
 ## Credits
 
 Collaborators:
-<div style="width: 60%; height: 60%">
-[![Taja Jones](https://avatars.githubusercontent.com/u/102881062?v=4)](https://github.com/tajajones2)
-<div>
+<a href="https://github.com/tajajones2"><img src="https://avatars.githubusercontent.com/u/102881062?v=4" width=50% height=50%>Taja Jones</a>
+
 <div style="width: 60%; height: 60%">
 [![Caitlin Spittler](https://avatars.githubusercontent.com/u/104328339?v=4)](https://github.com/cspitt99)
 <div>
